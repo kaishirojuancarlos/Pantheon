@@ -1,28 +1,106 @@
+# Pantheon Centralized Dependency Version Catalog
+# ================================================
+#
+# This file provides centralized version management for all project dependencies.
+# Using version catalogs ensures consistent dependency versions across all modules
+# and simplifies version updates.
+#
+# Usage in build.gradle.kts:
+#   implementation(libs.compose.runtime)
+#   alias(libs.plugins.composeMultiplatform)
+#
+# Version catalogs support:
+# - Version references: [versions] section
+# - Library definitions: [libraries] section
+# - Plugin definitions: [plugins] section
+#
+# For more information, see:
+# https://docs.gradle.org/current/userguide/version_catalogs.html
+
 [versions]
+# AndroidX Lifecycle - Used for Compose state management
+# Version format: major.minor.patch-betaX
 androidx-lifecycle = "2.11.0-beta01"
+
+# Compose Multiplatform - Cross-platform UI framework
+# Version format: major.minor.patch
 composeMultiplatform = "1.11.1"
+
+# JUnit - Unit testing framework
+# Version format: major.minor.patch
 junit = "4.13.2"
+
+# Kotlin - Programming language and standard library
+# Version format: major.minor.patch
+# Note: Must be compatible with JVM 25 toolchain
 kotlin = "2.4.10"
+
+# Kotlin Coroutines - Asynchronous programming
+# Version format: major.minor.patch
 kotlinx-coroutines = "1.11.0"
+
+# Material 3 Design - Modern UI components
+# Version format: major.minor.patch-alphaX
 material3 = "1.11.0-alpha07"
 
+
 [libraries]
+# -----------------------------------------------------------------------------
+# Kotlin Standard Libraries
+# -----------------------------------------------------------------------------
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+
+# -----------------------------------------------------------------------------
+# Testing Libraries
+# -----------------------------------------------------------------------------
 junit = { module = "junit:junit", version.ref = "junit" }
+
+# -----------------------------------------------------------------------------
+# AndroidX Lifecycle Components for Compose
+# -----------------------------------------------------------------------------
 androidx-lifecycle-viewmodelCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+
+# -----------------------------------------------------------------------------
+# Compose Multiplatform Core Libraries
+# -----------------------------------------------------------------------------
 compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatform" }
 compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
+
+# -----------------------------------------------------------------------------
+# Compose Material 3 UI Components
+# -----------------------------------------------------------------------------
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
+
+# -----------------------------------------------------------------------------
+# Compose UI and Tooling
+# -----------------------------------------------------------------------------
 compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
 compose-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatform" }
+
+# -----------------------------------------------------------------------------
+# Kotlin Coroutines Integration
+# -----------------------------------------------------------------------------
 kotlinx-coroutinesSwing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 
-[plugins]
-composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
-composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 
+[plugins]
+# -----------------------------------------------------------------------------
+# Compose Multiplatform Plugins
+# -----------------------------------------------------------------------------
+# Main Compose Multiplatform plugin for cross-platform UI development
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
+
+# Compose Compiler plugin for Kotlin compilation optimizations
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+# -----------------------------------------------------------------------------
+# Kotlin Plugins
+# -----------------------------------------------------------------------------
+# Kotlin JVM plugin for compiling Kotlin to JVM bytecode
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+# Kotlin Multiplatform plugin for cross-platform development
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

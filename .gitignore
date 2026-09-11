@@ -1,67 +1,137 @@
-# Compiled class file
+# Pantheon Project Git Ignore Configuration
+# ===========================================
+#
+# This file specifies intentionally untracked files that should be ignored
+# by Git. It prevents build artifacts, IDE configuration files, and other
+# generated or local files from being committed to the repository.
+#
+# For more information, see: https://git-scm.com/docs/gitignore
+
+# -----------------------------------------------------------------------------
+# Compiled and Generated Files
+# -----------------------------------------------------------------------------
+
+# Compiled class files
 *.class
 
-# Log file
+# -----------------------------------------------------------------------------
+# Log Files
+# -----------------------------------------------------------------------------
+
+# Generic log files
 *.log
 
-# BlueJ files
+# -----------------------------------------------------------------------------
+# IDE-Specific Files
+# -----------------------------------------------------------------------------
+
+# BlueJ project files
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# -----------------------------------------------------------------------------
+# Build Artifacts and Distribution Files
+# -----------------------------------------------------------------------------
+
+# Java archive files
 *.jar
 *.war
 *.nar
 *.ear
+
+# Archive files
 *.zip
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# -----------------------------------------------------------------------------
+# JVM Crash and Debug Files
+# -----------------------------------------------------------------------------
+
+# Virtual machine crash logs
+# See: http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
 
-# Kotlin Gradle plugin data, see https://kotlinlang.org/docs/whatsnew20.html#new-directory-for-kotlin-data-in-gradle-projects
+# -----------------------------------------------------------------------------
+# Kotlin-Specific Files
+# -----------------------------------------------------------------------------
+
+# Kotlin Gradle plugin data
+# See: https://kotlinlang.org/docs/whatsnew20.html#new-directory-for-kotlin-data-in-gradle-projects
 .kotlin/
 
+# -----------------------------------------------------------------------------
+# System and macOS Files
+# -----------------------------------------------------------------------------
 
+# Windows thumbnail database
 Thumbs.db
+
+# macOS metadata files
 .DS_Store
-.gradle
+
+# -----------------------------------------------------------------------------
+# Gradle Build Files
+# -----------------------------------------------------------------------------
+
+# Gradle build cache and configuration
+.gradle/
+
+# Build output directories
 build/
-target/
-out/
+
+# -----------------------------------------------------------------------------
+# Micronaut-Specific Files
+# -----------------------------------------------------------------------------
+
+# Micronaut build cache and generated files
 .micronaut/
-.idea
+
+# -----------------------------------------------------------------------------
+# IDE Configuration Files
+# -----------------------------------------------------------------------------
+
+# IntelliJ IDEA
+.idea/
 *.iml
 *.ipr
 *.iws
+
+# Eclipse
 .project
-.settings
+.settings/
 .classpath
 .factorypath
 
+# -----------------------------------------------------------------------------
+# macOS and Xcode Files
+# -----------------------------------------------------------------------------
 
-
-*.iml
-.kotlin
-.gradle
-**/build/
+# Xcode user data
 xcuserdata
-!src/**/build/
-local.properties
-.idea
-.DS_Store
-captures
+
+# Xcode external native build
 .externalNativeBuild
-.cxx
+
+# Xcode dependency files
+.cxx/
+
+# Xcode project files (ignore most, but allow specific files)
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
-**/xcshareddata/WorkspaceSettings.xcsettings
-node_modules/
 
+# Xcode shared data
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# -----------------------------------------------------------------------------
+# Node.js Files
+# -----------------------------------------------------------------------------
+
+# Node.js dependencies
+node_modules/

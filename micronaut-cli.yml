@@ -1,6 +1,93 @@
+# Micronaut CLI Configuration for Pantheon Project
+# ==================================================
+#
+# This file configures the Micronaut Command Line Interface (CLI) for rapid
+# application development and code generation. The CLI is used to create new
+# controllers, services, and other Micronaut artifacts.
+#
+# For more information, see:
+# https://micronaut-projects.github.io/micronaut-cli/latest/guide/
+#
+# Usage:
+#   mn create-controller kaishiro.pantheon.api.UserController
+#   mn create-service kaishiro.pantheon.service.UserService
+
+# -----------------------------------------------------------------------------
+# Application Configuration
+# -----------------------------------------------------------------------------
+# Type of application to generate
+# Options: default, cli, function, messaging, scheduled, serverless
 applicationType: default
+
+# Default package name for all generated classes
+# This should match your project's base package structure
 defaultPackage: kaishiro.pantheon
+
+# -----------------------------------------------------------------------------
+# Test Framework Configuration
+# -----------------------------------------------------------------------------
+# Primary test framework to use
+# Options: junit, spock, kotest, testng
 testFramework: junit
+
+# -----------------------------------------------------------------------------
+# Source Language Configuration
+# -----------------------------------------------------------------------------
+# Primary programming language for generated code
+# Options: java, kotlin, groovy
 sourceLanguage: kotlin
+
+# -----------------------------------------------------------------------------
+# Build Tool Configuration
+# -----------------------------------------------------------------------------
+# Build tool used by the project
+# Options: gradle, gradle_kotlin, maven, maven_kotlin
 buildTool: gradle_kotlin
-features: [app-name, graalvm, gradle, http-client-test, junit, kotlin, kotlin-application, ksp, logback, micronaut-aot, micronaut-build, micronaut-configuration-validation-gradle-plugin, micronaut-http-validation, netty-server, properties, readme, serialization-jackson, shade, static-resources]
+
+# -----------------------------------------------------------------------------
+# Feature Configuration
+# -----------------------------------------------------------------------------
+# List of Micronaut features to include in generated code
+# These features determine which dependencies and configurations are included
+#
+# Available features include:
+# - app-name: Application name configuration
+# - graalvm: GraalVM Native Image support
+# - gradle: Gradle build configuration
+# - http-client-test: HTTP client testing support
+# - junit: JUnit test framework integration
+# - kotlin: Kotlin language support
+# - kotlin-application: Kotlin application plugin
+# - ksp: Kotlin Symbol Processing support
+# - logback: Logback logging configuration
+# - micronaut-aot: Micronaut Ahead-of-Time compilation
+# - micronaut-build: Micronaut build plugins
+# - micronaut-configuration-validation-gradle-plugin: Configuration validation
+# - micronaut-http-validation: HTTP request validation
+# - netty-server: Netty server support
+# - properties: Properties-based configuration
+# - readme: README file generation
+# - serialization-jackson: Jackson JSON serialization
+# - shade: Shadow JAR packaging
+# - static-resources: Static resource handling
+features: [
+    app-name,
+    graalvm,
+    gradle,
+    http-client-test,
+    junit,
+    kotlin,
+    kotlin-application,
+    ksp,
+    logback,
+    micronaut-aot,
+    micronaut-build,
+    micronaut-configuration-validation-gradle-plugin,
+    micronaut-http-validation,
+    netty-server,
+    properties,
+    readme,
+    serialization-jackson,
+    shade,
+    static-resources
+]
